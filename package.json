@@ -1,0 +1,23 @@
+{
+  "name": "movietrackr",
+  "version": "1.0.0",
+  "description": "Keep Track of movies",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/asaadkhattab/MovieTrackr.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/asaadkhattab/MovieTrackr/issues"
+  },
+  "homepage": "https://github.com/asaadkhattab/MovieTrackr#readme",
+  "dependencies": {
+    "body-parser": "1.18.3",
+    "express": "4.16.3"
+  }
+}
