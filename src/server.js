@@ -1,12 +1,19 @@
+const router = require('./routes');
 const express = require ('express');
-const cofnig = require('./config');
+const config = require('./config');
 
 const app = express();
 
+const path = require('path');
+
+
+const publicPath = path.resolve(__dirname, '../public');
+app.use(express.static(publicPath));
+
 app.use(function(require, response, next){
-  res.end("MovieTrackr");
+  response.end("MovieTrackr");
 });
 
 app.listen(config.port, function(){
-  console.log(`${config.appName}` is listening on port ${config.port});
+  console.log(`${config.appName} is listening on port ${config.port}`);
 });
