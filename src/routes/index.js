@@ -15,9 +15,19 @@ router.get('/movie', function(require, response, next){
 
 //CREATE
 router.post('/movie', function(require, response, next){
-  const data = require.body;
-  console.log("POST DATA", data);
-  response.end('Add a Movie');
+  const Movie = mongoose.model('Movie');
+  const movieData = {
+    title: require.body.title,
+    description: require.body.description,
+  };
+
+  Movie.create(movieData, function(err, newMovie){
+    if(err){
+      console.error(err);
+      return response.status(500).json(err);
+    }
+    response.json(newMovie);
+  });
 });
 
 //READ

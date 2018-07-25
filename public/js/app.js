@@ -27,3 +27,17 @@ function refreshMovieDisplay(){
       $(`#list-container`).html(html);
     });
 }
+
+function submitMovieForm(){
+  console.log("Submitted");
+
+  const movieData = {
+    title: $('#movie-title').val(),
+    description: $('#file-description').val(),
+  };
+  console.log("Movies: ", movieData);
+}
+
+function cancelMovieForm(){
+  console.log("Clear");
+}
