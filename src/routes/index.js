@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const mongoose = require('mongoose');
 
 //DATABASE EXAMPLES
 const MOVIES = [
@@ -14,6 +15,8 @@ router.get('/movie', function(require, response, next){
 
 //CREATE
 router.post('/movie', function(require, response, next){
+  const data = require.body;
+  console.log("POST DATA", data);
   response.end('Add a Movie');
 });
 
@@ -30,6 +33,9 @@ router.get('/movie/:movieId', function(require, response, next){
 
 //UPDATE
 router.put('/movie/:movieId', function(require,response,next){
+  const data = require.body;
+  console.log("PUT DATA", data);
+
   response.end(`Update: '${require.params.movieId}'`)
 });
 
