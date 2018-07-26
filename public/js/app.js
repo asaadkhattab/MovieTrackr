@@ -1,10 +1,9 @@
 /*Get */
 
 function getMovies(){
-  return fetch('/api/movie')
+  return $.ajax('/api/movie')
   .then(response => response.json())
   .then(movies => {
-    console.log("Recieved", movies);
     return movies;
   })
   .catch(error => console.error("Display ", error));
@@ -16,19 +15,18 @@ function renderMovies(movies) {
     <li class="list-group-item">
       <strong>${movie.title}</strong> - ${movie.description}
     <span class="pull-right">
-      <button type="button" class="btn btn-xs btn-default" onclick="handleEditMovieClick()" data-movie-id="${movie._id}">Edit</button>
+      <button type="button" class="btn btn-xs btn-default" onclick="handleEditMovieClick('${movie._id}')">Edit</button>
+<button type="button" class="btn btn-xs btn-danger" onclick="handleDeleteMovieClick('${movie._id}')">Delete</button>
     </span>
     </li>`);
     const html = `<ul class="list-group"> ${listMovies.join('')}</ul>`;
     return html;
 }
 
-function handleEditMovieClick(element) {
-    const movieId = element.getAttribute('data-movie-id');
-
-    const movie = window.movieList.find(movie => movie._id === movieId);
+function handleEditMovieClick(id) {
+    const movie = window.movieList.find(movie => movie._id === id);
     if (movie) {
-      setForm(movie)
+      setForm(movie);
     }
   }
 
@@ -50,7 +48,7 @@ function submitMovieForm() {
   const movieData = {
     title: $('#movie-title').val(),
     description: $('#movie-description').val(),
-    _id: $('#movie-id').val();
+    _id: $('#movie-id').val()
   };
 
   let method, url;
@@ -73,11 +71,11 @@ function submitMovieForm() {
       .then(movie => {
         console.log("Update", movie);
         setForm();
-        refreshMovieList();
+        refreshMovieDisplay();
       })
       .catch(err => {
         console.error("Error", err);
-      }) 
+      })
 }
 
 
@@ -105,3 +103,25 @@ function setForm(data) {
     $('#form-label').text("Add Movie");
   }
 }
+
+function handleDeleteMovieClick(movieId){
+  if (confirm("Do you want to delete this movie?")) {
+    console.log("Movie Deleted: ", movieId);
+  }
+}
+
+function deleteFile(movieId) {
+  $.ajax({
+    type: 'DELETE',
+    url: '/api/file/' + movieId,
+    dataType: 'json',
+    contentType : 'application/json',
+  })
+    .done(function(response) {
+      refreshFileList();
+    })
+    .fail(function(error) {
+    })
+}
+
+refreshMovieDisplay();

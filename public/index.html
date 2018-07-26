@@ -8,15 +8,13 @@
   <body>
     <div class="container">
 
-
     <h1>MovieTrackr</h1>
 
     <div id="list-container"> </div>
-    <button id="add-movie-button" class="btn btn-primary" onclick="handleAddMovieClick()">Add Movie</button>
-      <div id="form-container"class="panel hidden">
-        <form id="add-movie-form">
 
-          <input type="hidden" id="movie-id" value=""/>
+      <div id="form-container"class="panel">
+
+        <form id="add-movie-form">
 
           <div class="form-group">
             <label for="movie-title">Title</label>
@@ -35,13 +33,19 @@
       </div>
     </div>
 
-
-  <script type="text/javascript">
-    $(document).ready(function(){
-      refreshMovieDisplay();
-      setForm();
-    });
-  </script>
+    <script id="list-template" type="text/x-handlebars-template">
+      <ul class="list-group">
+        {{#each movies}}
+        <li class="list-group-item">
+          <strong>{{title}}</strong> - {{description}}
+          <span class="pull-right">
+            <button type="button" class="btn btn-xs btn-default" onclick="handleEditMovieClick('{{_id}}')">Edit</button>
+            <button type="button" class="btn btn-xs btn-danger" onclick="handleDeleteMovieClick('{{_id}}')">Delete</button>
+          </span>
+        </li>
+        {{/each}}
+      </ul>
+    </script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.8/handlebars.min.js"></script>
