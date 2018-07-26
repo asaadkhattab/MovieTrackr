@@ -20,7 +20,6 @@ Movie.count({}, function(err, count) {
     }
     console.log("DB Seeded")
   });
-
 });
 
 module.exports = Movie;

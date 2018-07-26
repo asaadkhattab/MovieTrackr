@@ -1,18 +1,22 @@
+
+
 const router = require('./routes');
 const express = require ('express');
 const config = require('./config');
 const bodyParser = require('body-parser');
 
-const app = express();
+
 
 const path = require('path');
-
+const app = express();
 
 const publicPath = path.resolve(__dirname, '../public');
+app.use(express.static(publicPath));
+app.use('/api', router);
 
 const mongoose = require('mongoose');
 mongoose.connection.openUri(`mongodb://${config.db.username}:${config.db.password}@${config.db.host}/${config.db.dbName}`);
-app.use(express.static(publicPath));
+
 
 //IMPORT MODULES
 require('./models/movie.model.js');
