@@ -12,7 +12,8 @@ function getMovies(){
 
 function renderMovies(movies) {
   const listMovies = movies.map(movie => `
-    <div class="grid-container">
+
+    <li>
     <div class="grid-item card border-primary mb-3 list-group-item-action" style="max-width: 20rem;">
       <div class="card-header text-white bg-primary"><strong>${movie.title}</strong></div>
       <div class="card-body">
@@ -26,7 +27,8 @@ function renderMovies(movies) {
       </div>
     </div>
     </div>
-    </div>`);
+    </li>
+    `);
     const html = `<ul class="list-group"> ${listMovies.join('')}</ul>`;
     return html;
 }

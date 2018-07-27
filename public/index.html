@@ -40,10 +40,8 @@
     <!-- HEADER -->
     <h1 class="title">MovieTrackr</h1>
 
-    <!-- FORM -->
-    <div class="grid-container" id="list-container"> </div>
-
-      <div id="form-container" class="panel">
+    <!-- FORM TO SUBMIT MOVIE-->
+      <div id="form-container" class="panel jumbotron">
 
         <form id="add-movie-form">
           <input type="hidden" id="movie-id" value="" />
@@ -58,11 +56,16 @@
             <input type="text" class="form-control" id="movie-description" placeholder="Description">
           </div>
 
-          <button type="button" onclick="submitMovieForm()" class="btn btn-success">Submit</button>
+          <button type="button" onclick="submitMovieForm()" class="btn btn-success">Add Movie</button>
           <button type="button" onclick="cancelMovieForm()" class="btn btn-link">Cancel</button>
 
         </form>
       </div>
+    </div>
+
+    <!-- LIST OF MOVIES DISPLAY-->
+    <div class="flex-container">
+      <div class="container" id="list-container"> </div>
     </div>
 
     <!-- SCRIPTS -->
