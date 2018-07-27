@@ -3,7 +3,14 @@ const mongoose = require('mongoose');
 
 //DATABASE EXAMPLES
 const MOVIES = [
-  {id: 'a', title: 'hello.jpg', description: 'Thor'}
+  {id: '1', title: 'Iron Man', description: 'Tony Stark Builds an Armor'},
+  {id: '2', title: 'The Incredible Hulk', description: 'Bruce banner exposed to gamma radiation'},
+  {id: '3', title: 'Iron Man 2', description: 'Sequel'},
+  {id: '4', title: 'Thor', description: 'Thor must prove himself worthy and reclaim his hammer'},
+  {id: '5', title: 'Captain America', description: 'Steve Rogers is transformed to a super-soldier'},
+  {id: '6', title: 'The Avengers', description: 'Nick Fury Unites them'}
+
+
 ];
 
 router.use('/about', function(req, res, next) {
