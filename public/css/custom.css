@@ -17,18 +17,11 @@ ul.list-group {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  align-items: flex-start;
   justify-content: space-around;
-  width: 600px;
-  align-items: center;
-  flex-grow: 1;
-  margin: 10px auto;
-
  }
 
 
 .grid-item {
   text-align: center;
   width: 300px;
-  height: auto;
  }
