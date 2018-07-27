@@ -12,12 +12,19 @@ function getMovies(){
 
 function renderMovies(movies) {
   const listMovies = movies.map(movie => `
-    <li class="list-group-item">
-      <strong>${movie.title}</strong> - ${movie.description}
-    <span class="pull-right">
-      <button type="button" class="btn btn-xs btn-default" onclick="handleEditMovieClick(this)" data-movie-id="${movie._id}">Edit</button>
-      <button type="button" class="btn btn-xs btn-danger" onclick="handleDeleteMovieClick(this)" data-movie-id="${movie._id}">Delete</button>
-    </span>
+    <li>
+    <div class="card border-primary mb-3 list-group-item-action" style="max-width: 20rem;">
+      <div class="card-header"><strong>${movie.title}</strong></div>
+      <div class="card-body">
+        <h4 class="card-title">${movie.description}</h4>
+        <p class="card-text">
+        <span class="pull-right">
+          <button type="button" class="btn btn-xs btn-info" onclick="handleEditMovieClick(this)" data-movie-id="${movie._id}">Edit</button>
+          <button type="button" class="btn btn-xs btn-danger" onclick="handleDeleteMovieClick(this)" data-movie-id="${movie._id}">Delete</button>
+        </span>
+        </p>
+      </div>
+    </div>
     </li>`);
     const html = `<ul class="list-group"> ${listMovies.join('')}</ul>`;
     return html;
