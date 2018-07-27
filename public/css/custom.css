@@ -1,3 +1,4 @@
+/* REMOVE BULLETS */
 ul {
   list-style-type: none;
 }
@@ -6,13 +7,28 @@ ul {
   text-align: center;
 }
 
+
+
+/* FLEXBOX FOR MOVIE DISPLAY */
+
+
+
 ul.list-group {
-   display: grid;
-     grid-template-columns: 1fr 1fr 1fr;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-around;
+  width: 600px;
+  align-items: center;
+  flex-grow: 1;
+  margin: 10px auto;
 
  }
 
 
 .grid-item {
   text-align: center;
+  width: 300px;
+  height: auto;
  }
