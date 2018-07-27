@@ -29,25 +29,23 @@
             <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
           </li>
         </ul>
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="text" placeholder="Search">
-          <button class="btn sbtn-secondary my-2 my-sm-0" type="submit">Search</button>
-        </form>
+
       </div>
     </nav>
     <div class="container">
 
     <!-- HEADER -->
-    <h1 class="title">MovieTrackr</h1>
+    <h1 class="title">Welcome to MovieTrackr</h1>
 
     <!-- FORM TO SUBMIT MOVIE-->
       <div id="form-container" class="panel jumbotron">
 
         <form id="add-movie-form">
           <input type="hidden" id="movie-id" value="" />
-
+          <h1 class="display-4">Start a Movie Journal!</h1>
+          <p class="lead">What are you watching?</p>
           <div class="form-group">
-            <label for="movie-title">Title</label>
+            <label for="movie-title">Movie</label>
             <input type="text" class="form-control" id="movie-title" placeholder="Title">
           </div>
 
@@ -56,6 +54,7 @@
             <input type="text" class="form-control" id="movie-description" placeholder="Description">
           </div>
 
+          <hr class="my-4">
           <button type="button" onclick="submitMovieForm()" class="btn btn-success">Add Movie</button>
           <button type="button" onclick="cancelMovieForm()" class="btn btn-link">Cancel</button>
 
