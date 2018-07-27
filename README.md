@@ -5,3 +5,5 @@
 
 
 ### The database is stored on mlab.com
+#### To Edit a movie. Click on the Edit button, then scroll to the bottom to
+#### view the form and click on submit.

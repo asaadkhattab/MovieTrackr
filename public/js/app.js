@@ -1,4 +1,4 @@
-/*Get */
+/*getMovies */
 
 function getMovies(){
   return fetch('/api/movie')
@@ -12,9 +12,12 @@ function getMovies(){
 
 function renderMovies(movies) {
   const listMovies = movies.map(movie => `
-    <li>
+    <li class="flex-container">
+    <div >
+
+
     <div class="card border-primary mb-3 list-group-item-action" style="max-width: 20rem;">
-      <div class="card-header"><strong>${movie.title}</strong></div>
+      <div class="card-header text-white bg-primary"><strong>${movie.title}</strong></div>
       <div class="card-body">
         <h4 class="card-title">${movie.description}</h4>
         <p class="card-text">
@@ -24,6 +27,9 @@ function renderMovies(movies) {
         </span>
         </p>
       </div>
+    </div>
+
+
     </div>
     </li>`);
     const html = `<ul class="list-group"> ${listMovies.join('')}</ul>`;
@@ -113,6 +119,7 @@ function setForm(data) {
   }
 }
 
+/* DELETE */
 function handleDeleteMovieClick(element){
   const movieId = element.getAttribute('data-movie-id');
 
