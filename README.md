@@ -1,5 +1,5 @@
 # MOVIETRACKR
-* To start type 'npm run in the terminal'.
+* To start type 'npm start'.
 * Then open an internet browser and open http://localhost:8080/
 ## MovieTrackr helps a user track and list all the movies they saw.
 
